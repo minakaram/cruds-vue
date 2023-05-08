@@ -34,7 +34,7 @@
           </tbody>
         </table>
         <add-doctor-modal
-          v-if="(openAddDoctorModal)"
+          v-if="openAddDoctorModal"
           :value="addDoctorModalVisible"
           @save="addDoctor"
           @close="closeAddDoctorModal"
@@ -152,12 +152,12 @@ export default {
       console.log("Opening add doctor modal");
       this.addDoctorModalVisible = true;
     },
-    openAddPatientModal(){
-      this.addPatientModalVisible = true
+    openAddPatientModal() {
+      this.addPatientModalVisible = true;
       scrollTo({
         top: document.body.scrollHeight,
-        behavior:"smooth"
-      })
+        behavior: "smooth",
+      });
     },
     closeAddDoctorModal() {
       this.addDoctorModalVisible = false;
@@ -310,19 +310,26 @@ export default {
 };
 </script>
 <style>
-.main{
-  height: 950px;
+.main {
+  height: 1150px;
   padding-bottom: 30px;
-
+  background-color: cornflowerblue;
 }
-section{
+section {
   width: 100%;
 }
-table{
-width: 100%;
+table {
+  width: 100%;
 }
 
-th{
+th {
   text-align: left;
+}
+button {
+  background-color: darkcyan;
+  border: none;
+  padding: 10px;
+  margin-right: 5px;
+  border-radius: 5px;
 }
 </style>
