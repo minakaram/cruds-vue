@@ -65,14 +65,7 @@
               <td>{{ patient.phone }}</td>
               <td>{{ patient.file }}</td>
               <td>
-                <button
-                  @click="
-                    editPatientModalVisible = true;
-                    editPatient = patient;
-                  "
-                >
-                  Edit
-                </button>
+                <button @click="editPatientD(patient)">Edit</button>
                 <button @click="deletePatient(patient)">Delete</button>
               </td>
             </tr>
@@ -148,6 +141,15 @@ export default {
     }
   },
   methods: {
+    editPatientD(patient) {
+      this.editPatientModalVisible = true;
+      this.editPatient = patient;
+
+      scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth",
+      });
+    },
     openAddDoctorModal() {
       console.log("Opening add doctor modal");
       this.addDoctorModalVisible = true;
